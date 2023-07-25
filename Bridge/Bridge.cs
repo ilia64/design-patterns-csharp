@@ -22,16 +22,16 @@ public class FlyMoveBehaviour : IMoveBehaviour
 
 public abstract class Animal
 {
-    protected IMoveBehaviour _moveBehaviour;
+    protected readonly IMoveBehaviour MoveBehaviour;
 
     protected Animal(IMoveBehaviour moveBehaviour)
     {
-        _moveBehaviour = moveBehaviour;
+        MoveBehaviour = moveBehaviour;
     }
 
     public virtual void Move()
     {
-        var result = _moveBehaviour.Move();
+        var result = MoveBehaviour.Move();
         Console.WriteLine($"\t{GetType().Name} {result}");
     }
 }
@@ -60,7 +60,7 @@ public class Bird : Animal
 
     public override void Move()
     {
-        var result = _moveBehaviour.Move();
+        var result = MoveBehaviour.Move();
         Console.WriteLine(Pattern, GetType().Name, result);
     }
 }
@@ -71,10 +71,13 @@ public static class BridgeSample
     {
         Console.WriteLine("Bridge:");
 
-        var list = new List<Animal>()
+        var list = new List<Animal>
         {
             new Cat(new WalkMoveBehaviour()),
+            new Cat(new FlyMoveBehaviour()),
+            new Cat(new SwimMoveBehaviour()),
             new Fish(new SwimMoveBehaviour()),
+            new Bird(new WalkMoveBehaviour()),
             new Bird(new FlyMoveBehaviour()),
         };
 
