@@ -2,6 +2,13 @@ namespace DesignPatterns.TemplateMethod;
 
 public abstract class Bootstrap
 {
+    protected readonly string Name;
+
+    protected Bootstrap()
+    {
+        Name = GetType().Name;
+    }
+
     public void Run()
     {
         InitGame();
@@ -11,12 +18,12 @@ public abstract class Bootstrap
 
     private void InitGame()
     {
-        Console.WriteLine("\tInit game");
+        Console.WriteLine($"\t{Name}: Init game");
     }
 
     protected virtual void InitPermissions()
     {
-        Console.WriteLine("\tInit permissions");
+        Console.WriteLine($"\t{Name}: Init permissions");
     }
 
     protected abstract void InitStore();
@@ -26,7 +33,7 @@ public class AndroidBootstrap : Bootstrap
 {
     protected override void InitStore()
     {
-        Console.WriteLine("\tInit GooglePlay");
+        Console.WriteLine($"\t{Name}: Init GooglePlay");
     }
 }
 
@@ -34,13 +41,13 @@ public class IosBootstrap : Bootstrap
 {
     protected override void InitStore()
     {
-        Console.WriteLine("\tInit AppStore");
+        Console.WriteLine($"\t{Name}: Init AppStore");
     }
 
     protected override void InitPermissions()
     {
         base.InitPermissions();
-        Console.WriteLine("\tInit IOS permissions");
+        Console.WriteLine($"\t{Name}: Init IOS permissions");
     }
 }
 
@@ -54,7 +61,6 @@ public static class TemplateMethodSample
         var iosBootstrap = new IosBootstrap();
 
         androidBootstrap.Run();
-        Console.WriteLine("\t---");
         iosBootstrap.Run();
     }
 }
