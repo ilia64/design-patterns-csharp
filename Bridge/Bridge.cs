@@ -10,11 +10,6 @@ public class WalkMoveBehaviour : IMoveBehaviour
     public string Move() => "Walk";
 }
 
-public class SwimMoveBehaviour : IMoveBehaviour
-{
-    public string Move() => "Swim";
-}
-
 public class FlyMoveBehaviour : IMoveBehaviour
 {
     public string Move() => "Fly";
@@ -39,13 +34,6 @@ public abstract class Animal
 public class Cat : Animal
 {
     public Cat(IMoveBehaviour moveBehaviour) : base(moveBehaviour)
-    {
-    }
-}
-
-public class Fish : Animal
-{
-    public Fish(IMoveBehaviour moveBehaviour) : base(moveBehaviour)
     {
     }
 }
@@ -75,8 +63,6 @@ public static class BridgeSample
         {
             new Cat(new WalkMoveBehaviour()),
             new Cat(new FlyMoveBehaviour()),
-            new Cat(new SwimMoveBehaviour()),
-            new Fish(new SwimMoveBehaviour()),
             new Bird(new WalkMoveBehaviour()),
             new Bird(new FlyMoveBehaviour()),
         };
