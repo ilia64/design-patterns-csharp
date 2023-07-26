@@ -5,6 +5,7 @@ using DesignPatterns.Observer;
 using DesignPatterns.Strategy;
 using DesignPatterns.Bridge;
 using DesignPatterns.Decorator;
+using DesignPatterns.FactoryMethod;
 using DesignPatterns.State;
 using DesignPatterns.TemplateMethod;
 
@@ -16,4 +17,5 @@ BridgeSample.Test();
 TemplateMethodSample.Test();
 StateSample.Test();
 DecoratorSample.Test();
+FactoryMethodSample.Test();
 AbstractFactorySample.Test();
