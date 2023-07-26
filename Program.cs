@@ -1,4 +1,5 @@
-﻿using DesignPatterns.Singleton;
+﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Singleton;
 using DesignPatterns.Visitor;
 using DesignPatterns.Observer;
 using DesignPatterns.Strategy;
@@ -15,3 +16,4 @@ BridgeSample.Test();
 TemplateMethodSample.Test();
 StateSample.Test();
 DecoratorSample.Test();
+AbstractFactorySample.Test();
