@@ -3,6 +3,7 @@ using DesignPatterns.Visitor;
 using DesignPatterns.Observer;
 using DesignPatterns.Strategy;
 using DesignPatterns.Bridge;
+using DesignPatterns.Decorator;
 using DesignPatterns.State;
 using DesignPatterns.TemplateMethod;
 
@@ -13,3 +14,4 @@ StrategySample.Test();
 BridgeSample.Test();
 TemplateMethodSample.Test();
 StateSample.Test();
+DecoratorSample.Test();
