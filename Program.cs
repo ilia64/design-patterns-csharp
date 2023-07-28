@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.AbstractFactory;
+using DesignPatterns.Adapter;
 using DesignPatterns.Singleton;
 using DesignPatterns.Visitor;
 using DesignPatterns.Observer;
@@ -19,3 +20,4 @@ StateSample.Test();
 DecoratorSample.Test();
 FactoryMethodSample.Test();
 AbstractFactorySample.Test();
+AdapterSample.Test();
